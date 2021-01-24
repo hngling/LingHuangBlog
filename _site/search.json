@@ -1,0 +1,36 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Welcome to my Blog. I like to share my Data Visualization works and other Technology news here. Enjoy it! If you have any questions, feel free to reach me at hngling@gmail.com.",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-24T21:57:34+08:00"
+    },
+    {
+      "path": "dvmakeover.html",
+      "title": "Enjoy reading it!",
+      "description": "This page is to show the Data Viz Makeover.",
+      "author": [],
+      "contents": "\r\nWelcome to Data Viz Makeover!\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-24T22:01:06+08:00"
+    },
+    {
+      "path": "dvproject.html",
+      "title": "Data Viz Project",
+      "description": "This page is for Data Viz Project.",
+      "author": [],
+      "contents": "\r\nR Markdown\r\nThis is an R Markdown document.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-24T21:59:22+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Ling Huang's Blog",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-01-24T22:03:44+08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

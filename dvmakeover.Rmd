@@ -1,0 +1,18 @@
+---
+title: "Enjoy reading it!"
+description:
+  This page is to show the Data Viz Makeover.
+site: distill::distill_website
+listing: posts
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Welcome to Data Viz Makeover!
+
+
+
