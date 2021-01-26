@@ -1,5 +1,5 @@
 ---
-title: "My 1st DataViz Makeover in 2021"
+title: "SG Residents Labor Force Participation Rate and Shares by Ages (2009 vs. 2019)"
 description: |
   In this post, I would like to present Singapore Residents Labor Force Participation Rate and Shares by Ages in 2009 and in 2019 via the tool Tableau.  
   Besides, I observed some of the important insights gained from the Data Viz.
