@@ -1,5 +1,7 @@
 ---
 title: "Ling Huang's Blog"
 site: distill::distill_website
-listing: posts
+listing: 
+  posts:
+    - welcome
 ---

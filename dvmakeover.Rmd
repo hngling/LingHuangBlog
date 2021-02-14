@@ -3,7 +3,10 @@ title: "Enjoy reading it!"
 description:
   This page is to show the Data Viz Makeover.
 site: distill::distill_website
-listing: posts
+listing: 
+  posts:
+    - 2021-02-14-vizcovid19survey
+    - 2021-01-24-my-1st-dataviz-makeover-in-2021
 ---
 
 

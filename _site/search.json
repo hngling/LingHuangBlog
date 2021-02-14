@@ -14,7 +14,7 @@
       "description": "This page is to show the Data Viz Makeover.",
       "author": [],
       "contents": "\r\nWelcome to Data Viz Makeover!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-24T22:01:06+08:00"
+      "last_modified": "2021-02-14T19:36:48+08:00"
     },
     {
       "path": "dvproject.html",
@@ -29,7 +29,7 @@
       "title": "Ling Huang's Blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-24T22:03:44+08:00"
+      "last_modified": "2021-02-14T19:38:56+08:00"
     }
   ],
   "collections": ["posts/posts.json"]

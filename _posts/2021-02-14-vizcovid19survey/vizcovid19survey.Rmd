@@ -1,0 +1,24 @@
+---
+title: "Are you willing to get Covid-19 vaccine?"
+description: |
+  This post is meant to visualize the survey results of willingness of getting COVID19 Vaccine in various countries. The data is provided by [Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub](https://github.com/YouGov-Data/covid-19-tracker) hosted at Github.
+author:
+  - name: Ling Huang
+    url: https://www.linghuang.cc
+date: 02-14-2021
+preview: covid19vaccine.jpg
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
