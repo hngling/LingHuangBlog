@@ -56,7 +56,6 @@ As mentioned earlier, I wanted to choose the Gantt chart. In the original datase
 
 | Title 	| Question                                                                                                    	|
 |--------	|-------------------------------------------------------------------------------------------------------------	|
-| vac_2  	| If a Covid-19 vaccine becomes   available to me in 2021, I definitely intend to get it.                     	|
 | vac2_1 	| I am worried about   getting COVID19                                                                        	|
 | vac2_2 	| I am worried about   potential side effects of a COVID19 vaccine                                            	|
 | vac2_3 	| I believe government   health authorities in my country will provide me with an effective COVID19   vaccine 	|
@@ -137,7 +136,7 @@ Some entries have multiple responses on this question, (e.g. the survey responde
 
 4.    Save each country's dataset as .csv file. Keep them in one folder.
 
-_I uploaded the [final datasets](xxx.zip) here for your download._
+_I uploaded the [final datasets](data.zip) here for your download._
 
 
 # 5. Step by step implementation in Tableau
@@ -151,7 +150,12 @@ Click the dropdown arrow of australia.csv data, and click *'Remove'* button.
 ![](snapshots/step2.png)
 
 ### Step 3
-Now,  we need merge all files into one. So, to create a new union datatable, 1. click the New Union button in the 'Files' pane; 2. then select all data files in the 'Files' pane; 3. then drag them into the New Union pop-up window; 4. click *'OK'* button.
+Now,  we need merge all files into one. So, to create a new union datatable: <br>
+-   1. click the New Union button in the 'Files' pane; <br>
+-   2. then select all data files in the 'Files' pane; <br>
+-   3. then drag them into the New Union pop-up window; <br>
+-   4. click *'OK'* button. <br>
+
 ![](snapshots/step3.png)
 
 ### Step 4
