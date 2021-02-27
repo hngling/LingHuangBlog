@@ -1,7 +1,7 @@
 ---
 title: "Enjoy reading it!"
 description:
-  This page is to show the Data Viz Makeover.
+  This page is to show the some Data Visualizations
 site: distill::distill_website
 listing: 
   posts:

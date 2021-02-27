@@ -11,18 +11,18 @@
     {
       "path": "dvmakeover.html",
       "title": "Enjoy reading it!",
-      "description": "This page is to show the Data Viz Makeover.",
+      "description": "This page is to show the some Data Visualizations",
       "author": [],
       "contents": "\r\nWelcome to Data Viz Makeover!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-14T19:36:48+08:00"
+      "last_modified": "2021-02-26T21:37:31+08:00"
     },
     {
       "path": "dvproject.html",
-      "title": "Data Viz Project",
-      "description": "This page is for Data Viz Project.",
+      "title": "Do you feel happy in your country?",
+      "description": "Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?\nBeing inspired by this question, we decide to explore it and hopefully we can dig out some insights.\n",
       "author": [],
-      "contents": "\r\nR Markdown\r\nThis is an R Markdown document.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-01-24T21:59:22+08:00"
+      "contents": "\r\nMotivation\r\nAs countries get richer, we may assume that people become happier .Our Visualization aims to first show the trends of World Happiness from 2015 to 2020 for different countries, and its correlation with other factors such as Economic, Family, Freedom and Health etc.\r\nObjective\r\nWe aim to present this view with a series of charts including:\r\nBar chart of the different factors\r\nLinear correlation chart between the Happiness index and other variables\r\nHeatmap of the variables\r\nInteractive World Happiness Map with animations for 2015~2020\r\nData Visualization Approaches\r\nWe aim to present this view with a series of charts including: We aim to present this view with a series of charts including: We aim to present this view with a series of charts including: We aim to present this view with a series of charts including:\r\nPrototypes of the Data Visualization\r\nLinear chart (Happiness Score vs. GDP Per Capita) \r\nGantt Chart of Happiness Score across different regions/countries \r\nHappiness Score broken down by various factors \r\ndafddd \r\nWorldmap of Happiness \r\ndafddd \r\nData Source\r\nKaggle Happiness Dataset\r\nWorld Happiness Report Official Website\r\nR Markdown\r\nThis is an R Markdown document.\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-02-27T22:19:32+08:00"
     },
     {
       "path": "index.html",
