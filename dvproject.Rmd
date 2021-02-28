@@ -47,25 +47,38 @@ We aim to present this view with a series of charts including:
 ![](projectimages/overview.png)
 
 ### 4.2    Barchart of Happiness Score across different regions
+A configurable bar charts allows the user to view the country-by-country trajectory of happiness score throughout the years. 
+
 ![](projectimages/Picture4.png)
 
 
 ### 4.3    Stacked Barchart broken down by different variables
+The World Happiness Report has broken down the happiness score into 6 explained factors, hence, using a stacked bar chart, users can analyze the composition of the happiness score and the weight/importance of each factor for each country/region.
+
 ![](projectimages/Picture3.png)
 
 
-### 4.4    Gantt Chart of Happiness Score across different regions/countries
+### 4.4    Boxplot Chart of Happiness Score across different regions/countries
+
+A horizontal boxplot chart will provide a different and broken down view of the distribution of happiness score and the measured factors among regions or continents.
+
 ![](projectimages/Picture2.png)
 
 
-### 4.5    Linear Regression Analysis - Happiness against different variables
+### 4.5    Linear Regression Chart - Happiness against different variables
+Multiple scatter plot with linear regression, each shows the happiness score compared to each measured factors: economic production, social support, life expectancy, freedom, perception of corruption, and generosity. The trends shown in the scatter plots will be a one-dimensional linear regression, fit independently for each factor
+
 ![](projectimages/Picture1.png)
 
 ### 4.6    Clustering analysis
+Cluster analysis is a technique for grouping similar observations into a number of clusters based on multiple variables for each individual observed values. Our proposed cluster analysis is to see that for the Happiness index, and also its constituent Happiness Variables, how close are the countries from the different continents. Another view we can form, is we cluster the countries based on certain or group of variables, are they another clear trends, and whether these trends change over time.
+
 ![](projectimages/Cluster.png)
 
 
 ### 4.7    World Happiness Map
+A choropleth world map to represent an aggregate summary of the happiness score and its' independent variables geographically. The map can give an overview of how each variable varies across each region and continent.
+
 ![](projectimages/Picture5.png)
 
 
