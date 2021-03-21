@@ -25,9 +25,9 @@ Armed Conflict Location & Event Data Project [(ACLED)](https://acleddata.com) co
 
 ![](originalchart.png)
 
-After checking the [raw dataset], I think we can have a better way to visualize the data so that the users would be able to interpreter the Armed COnflicts situation in South East Asia easily.
+After checking the [raw dataset](Southeast-Asia_2010-2020_Oct31.xlsx), I think we can have a better way to visualize the data so the users would be able to interpret the Armed COnflicts situation in South East Asia easily.
 
-In this paper, firstly I criticized the original data visualization with some suggestions, then it followed up with implementation in Tableau tool. At the end of the paper, I drew some of the important insights derived from my data visualization.
+In this paper, firstly I criticized the original data visualization with some suggestions, then it followed up with implementation in Tableau tool. At the end of the paper, a few important insights were derived from my data visualization.
 
 
 # 2. Critics and Recommended Improvements
