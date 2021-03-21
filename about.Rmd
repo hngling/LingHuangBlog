@@ -1,7 +1,10 @@
 ---
 title: "About this blog"
 description: |
-  Welcome to my Blog. I like to share my Data Visualization works and other Technology news here. Enjoy it! If you have any questions, feel free to reach me at hngling@gmail.com.
+  Welcome to my Blog. I like to share my Data Visualization works and other Technology news here. 
+  Enjoy it! 
+  
+  If you have any questions, feel free to reach me at hngling@gmail.com.
 ---
 
 ```{r setup, include=FALSE}

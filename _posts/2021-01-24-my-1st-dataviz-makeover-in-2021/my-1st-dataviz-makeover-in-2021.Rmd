@@ -1,8 +1,11 @@
 ---
-title: "SG Residents Labor Force Participation Rate and Shares by Ages (2009 vs. 2019)"
+title: " Is Singapore Residents Labor Force getting older?"
 description: |
-  In this post, I would like to present Singapore Residents Labor Force Participation Rate and Shares by Ages in 2009 and in 2019 via the tool Tableau.  
-  Besides, I observed some of the important insights gained from the Data Viz.
+  Populationg aging is a well-known phenomenon for many years in Singapore. But how does it affect the labor force market? 
+  
+  Recently, I gathered the Residents labor force data (from 2009 to 2019) from Singapore Ministry of Manpower website. 
+  
+  Here in this post, I wanted to share some of the insights derived from my data visualization. In my data visualization, I compared the residents Labor Force Participation Rate in 2009 with that in 2019. Besides, I compared the Shares of different Age Groups in the labor market in 2009 and in 2019. The tool I used is Tableau.
 author:
   - name: Ling Huang
 <!--    url: https://ling.party -->
@@ -26,7 +29,7 @@ Singapore Ministry of Manpower released the report [Labour Force in Singapore 20
 
 After check the [original data](https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx) - Table 5, We feel that this illustration is misleading and cannot fully support the statement.
 
-Therefore, we made some changes on the illustration to better support the statement.
+Therefore, I made some changes on the illustration to better support the statement.
 
 # 2. Critics and Recommended Improvements
 
@@ -59,7 +62,7 @@ First of all, the original chart contains a few Clarify issues and Aesthetic iss
 
 ### Improvements for the Aethetic Issues and their merits
 1.	Change the colors of 2009-June and 2019-June to make them contrast strongly; -> so the comparison would be more obvious.
-2.	Change the fonts, use different fonts for axis title, Legend, Title and Annotation etc.; -> so we can highlight the key messages.
+2.	Change the fonts, use different fonts for axis title, Legend, Title and Annotation etc.; -> then the key messages can be highlighted.
 3.	Add the grid lines for Y-axis; -> so the end-users can interpret the chart easily.
 
 # 3. Sketch the design
@@ -91,10 +94,9 @@ _Note: LFPR stands for Labor Force Participation Rate._
 | 65~79     	|           29.9 	|           46.1 	|              1.8 	|              4.5 	|
 | 70 & Over 	|           10.5 	|           17.6 	|              1.2 	|              2.7 	|
 
-# 5. Tableau Data Visualization
-Final Data Visualization in Tableau.
-![](FinalChart.png)
+# 5. Snapshot of my Final Data Visualization in Tableau
 You can go to my [Tableau Public](https://public.tableau.com/profile/hngling#!/vizhome/Makeover1_LH/Sheet1) to view High Resolution version.
+![](FinalChart.png)
 
 
 # 6. Implementation Guide in Tableau (Step by Step)
@@ -122,16 +124,12 @@ You can go to my [Tableau Public](https://public.tableau.com/profile/hngling#!/v
 ![](images/9.png)
 ![](images/10.png)
 
-10. Go to X-axis. Exclude the 15~19 and 20~24 data (In terms of the Participation Rate and Shares of Labor Force, we can observe that there is no big difference between 2009-June and 2019-June for these two Age groups). Let us remove them and focus more on the labors Aged 25 and above.  
-![](images/11.png)
-11.   Right click anywhere on the chart to add a few Annotations.
+10.   Right click anywhere on the chart to add a few Annotations.
 ![](images/12.png)
-12.   Right click the title to edit the title. I rename it as 'Singapore Residents Labor Force Participation Rate and Shares by Ages'.
+11.   Right click the title to edit the title. I rename it as 'Singapore Residents Labor Force Participation Rate and Shares by Ages'.
 ![](images/13.png)
 
-
-
-# 7. Major Observations from Data Viz
+# 7. Major Observations from final Data Visualization
 
 During the implementation progress, we can find out three major observations.
 
