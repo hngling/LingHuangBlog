@@ -1480,7 +1480,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="objective">1. Objective</h1>
 <p>Armed Conflict Location &amp; Event Data Project <a href="https://acleddata.com">(ACLED)</a> collected all the raw dataset about the Armed Conflicts globally. Prof. Kam made a spatial-temporal data visualization <a href="https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis">here</a>.</p>
 <p><img src="originalchart.png" /></p>
-<p>After checking the <a href="Southeast-Asia_2010-2020_Oct31.xlsx">raw dataset</a>, I think we can have a better way to visualize the data so the users would be able to interpret the Armed COnflicts situation in South East Asia easily.</p>
+<p>After checking the <a href="Southeast-Asia_2010-2020_Oct31.xlsx">raw dataset</a>, I think we can have a better way to visualize the data so the users would be able to interpret the Armed Conflicts situation in South East Asia easily.</p>
 <p>In this paper, firstly I criticized the original data visualization with some suggestions, then it followed up with implementation in Tableau tool. At the end of the paper, a few important insights were derived from my data visualization.</p>
 <h1 id="critics-and-recommended-improvements">2. Critics and Recommended Improvements</h1>
 <p>In 2012, Ben Jones published an article about the key principles of Data Visualization. In short, we should visualize the data clearly and aesthetically. To support that, he created a <a href="https://dataremixed.com/2012/05/data-visualization-clarity-or-aesthetics/">Cartesian coordinate system</a> as shown below. <img src="principles.png" /></p>
@@ -1502,17 +1502,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>The Spatial chart used the dot to illustrate 6 different event types. However, it is extremely difficult for the users to count each event type. Therefore, the users cannot interpret how severe each event type is nor compare against each other.</td>
-<td>We should abandon the circle shape and choose another shape to represent the event types. It will allow the users to interpret the data easier.</td>
+<td>On the spatial map, 6 different event types are represented by 6 different colors in circle shape. All the circles are scattered across the map and they mix with each other. It looks a bit messy and makes the users difficult to identify each event type and compare one with another.</td>
+<td>We should abandon the circle shape. I suggest to use the Pie chart to illustrate the Event Types at the country level. It will allow the users to interpret the data easier.</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>The line chart tries to show 6 different event types. But the sequence of the event types does not match the sequence in the legend. It is confusing. Besides, we could find the Fatalities data in the raw dataset but we failed to find it anywhere in the line chart.</td>
-<td>We need to re-plot the line chart for the Event Types and also we need to plot the Fatalities data. It will enable the users to better compare the event types and understand the fatalities.</td>
+<td>The line chart tries to show 6 different event types. But the sequence of the event types does not match the sequence in the legend. It is confusing the users. Besides, Fatalities data is found in the raw dataset but it is not plotted in the line chart.</td>
+<td>We need to re-plot the line chart for the Event Types and put all event types in one chart with different colors. Fatalities data is quite informational for the users to understand how severe the Armed Conflicts situation is, so we should plot the Fatalities data.</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>The X-axis title “Event Date” in the line chart is not correct because it shows at the Year level rather than Day level. The Year 2020 data only considers 2020 Jan 1 to 2020 Oct 31, we need to highlight it. The different Event Types have different scale of Y-axis and it causes misconceptions. For instance, Battles’ scale is ‘400~700’ whereas Riots’ scale is ‘5~20’.</td>
+<td>The X-axis title “Event Date” is not correct because the line chart shows the data aggregated at the Year level rather than Day level. Besides, the Year 2020 data only includes the data from 2020/01/01 to 2020/10/31, but this point is not highlighted. In the meantime, the different Event Types have different scales of Y-axis and it causes misconceptions. For instance, Battles’ scale is ‘400~700’ whereas Riots’ scale is ‘5~20’.</td>
 <td>We should remove the X-axis title “Event Date”. Then, we need to highlight that the data for Year 2020 is cut off at Oct-31, 2020. We need to put all the types in one chart and then use different colors to differentiate them and also synchronize the scale for all types.</td>
 </tr>
 </tbody>
