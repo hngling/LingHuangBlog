@@ -1,8 +1,11 @@
 ---
 title: "About this blog"
 description: |
-  Welcome to my Blog. I like to share my Data Visualization works and other Technology news here. 
-  Enjoy it! 
+  Welcome to my Blog.
+
+  This blog site is served a repository to publish my data analytics works derived from my SMU courses or my pet projects!
+  
+  I would like to share some interesting insights or skills that surfaced from my experiences. 
   
   If you have any questions, feel free to reach me at hngling@gmail.com.
 ---

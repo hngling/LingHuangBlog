@@ -3,33 +3,40 @@
     {
       "path": "about.html",
       "title": "About this blog",
-      "description": "Welcome to my Blog. I like to share my Data Visualization works and other Technology news here. \nEnjoy it! \n\nIf you have any questions, feel free to reach me at hngling@gmail.com.",
+      "description": "Welcome to my Blog.\n\nThis blog site is served a repository to publish my data analytics works derived from my SMU courses or my pet projects!\n\nI would like to share some interesting insights or skills that surfaced from my experiences. \n\nIf you have any questions, feel free to reach me at hngling@gmail.com.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-03-20T13:47:30+08:00"
+      "last_modified": "2021-04-04T13:49:19+08:00"
     },
     {
       "path": "dvmakeover.html",
-      "title": "Enjoy reading it!",
-      "description": "This page is to show the some Data Visualizations",
+      "title": "Data Analytics by the tool Tableau!",
+      "description": "This page is to show the some Data Visualizations done by Tableau. \n\nHope you enjoy reading it! Feel free to contact me if you have any comments or feedback!\n",
       "author": [],
-      "contents": "\r\nWelcome to Data Viz Makeover!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-03-20T17:48:32+08:00"
+      "contents": "\r\nWelcome to Data Viz by Tableau!\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-04T13:52:22+08:00"
     },
     {
       "path": "dvproject.html",
-      "title": "The secret recipe of Happiness",
-      "description": "Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?\nBeing inspired by this question, we decide to explore it and hopefully we can dig out some insights.\n",
+      "title": "Data Analytics by the tool R & RStudio",
+      "description": "This page is to show the some Data Visualizations conducted through the R.\n",
       "author": [],
-      "contents": "\r\n1. Motivation\r\nHappiness leads to a wide range of benefits for our performance, health, relationships and more. So, rather than success being the key to Happiness , research shows that Happiness could in fact be the key to success. Indeed, Happiness also brings substantial benefits for society. \r\nThe World Happiness Report is an annual survey by the Sustainable Development Solutions Network for the United Nations, revealing some countries are quite consistently outperforming in Happiness. The report measures 156 countries, ranking countries using the Gallup World Poll and six factors: levels of GDP, life expectancy, generosity, social support, freedom, and corruption income.\r\nIn general, with the Government focus of generating wealth and economic growth, there is an assumption that leads ‘naturally’ to Happiness and improved quality of life for all residents. But is this true? Specifically, by studying the relative achievements and correlations between countries and also over time, we can generate more insights of how Happiness comes about. This information is important for individuals looking to emigrate, and for governments looking for good measure for actual ‘quality of life’ improvements.\r\n2. Objective\r\nOur project aims to show through a series of visualizations based on data analysis, to the audience regarding the actual factors influencing Happiness and also some comparisons between countries.\r\nBy reviewing data and analyzing the trends of the World Happiness Report to uncover the key impacts and factors influencing the development of happiness, correlations between these factors for different countries from 2015 to 2020( last report was done in March 2020).\r\n3. Data Visualization Approaches\r\nWe aim to present this view with a series of charts including:\r\nExploratory Data Analysis such as Bar Chart and Gantt Chart etc.\r\nCo-occurrence and Linear Regression Analysis chart\r\nFor Various Constituent Variables\r\nCluster Analysis of Happiness between countries for selected period, variables.\r\nVisualization of World Happiness Map\r\nInteractive World Happiness Map with animations for 2015~2020\r\n4. Prototypes of the Data Visualization\r\n4.1 High-level layout of the Interactive Chart\r\n\r\n4.2 Barchart of Happiness Score across different regions\r\nA configurable bar charts allows the user to view the country-by-country trajectory of happiness score throughout the years.\r\n\r\n4.3 Stacked Barchart broken down by different variables\r\nThe World Happiness Report has broken down the happiness score into 6 explained factors, hence, using a stacked bar chart, users can analyze the composition of the happiness score and the weight/importance of each factor for each country/region.\r\n\r\n4.4 Boxplot Chart of Happiness Score across different regions/countries\r\nA horizontal boxplot chart will provide a different and broken down view of the distribution of happiness score and the measured factors among regions or continents.\r\n\r\n4.5 Linear Regression Chart - Happiness against different variables\r\nMultiple scatter plot with linear regression, each shows the happiness score compared to each measured factors: economic production, social support, life expectancy, freedom, perception of corruption, and generosity. The trends shown in the scatter plots will be a one-dimensional linear regression, fit independently for each factor\r\n\r\n4.6 Clustering analysis\r\nCluster analysis is a technique for grouping similar observations into a number of clusters based on multiple variables for each individual observed values. Our proposed cluster analysis is to see that for the Happiness index, and also its constituent Happiness Variables, how close are the countries from the different continents. Another view we can form, is we cluster the countries based on certain or group of variables, are they another clear trends, and whether these trends change over time.\r\n\r\n4.7 World Happiness Map\r\nA choropleth world map to represent an aggregate summary of the happiness score and its’ independent variables geographically. The map can give an overview of how each variable varies across each region and continent.\r\n\r\n5. Data Source\r\nKaggle Happiness Dataset\r\nWorld Happiness Report Official Website\r\nR Markdown\r\nThis is an R Markdown document.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-28T22:16:33+08:00"
+      "contents": "\r\nWelcome to Data Viz by R!\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-04T13:33:21+08:00"
     },
     {
       "path": "index.html",
-      "title": "Ling Huang's Blog",
-      "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-14T19:38:56+08:00"
+      "title": "Welcome to my Blog",
+      "description": "Initially, this blog site was created to fulfill the requirements from SMU program Master of IT in Business - Data Analytics track.\nLater on, I expanded it to document my data analytics works from my spare time.\nI hope you enjoy reading it!",
+      "author": [
+        {
+          "name": "Ling Huang",
+          "url": "https://www.linghuang.cc"
+        }
+      ],
+      "date": "02-02-2021",
+      "contents": "\r\n1. Essentially, what is Data Science?\r\n\r\n2. The hierarchy needs within Data Science\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-04T14:11:25+08:00"
     }
   ],
   "collections": ["posts/posts.json"]

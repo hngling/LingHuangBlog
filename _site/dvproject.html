@@ -85,29 +85,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Ling Huang's Tech Blog: The secret recipe of Happiness</title>
+  <title>Ling Huang's Tech Blog: Data Analytics by the tool R &amp; RStudio</title>
 
-  <meta property="description" itemprop="description" content="Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?&#10;Being inspired by this question, we decide to explore it and hopefully we can dig out some insights."/>
+  <meta property="description" itemprop="description" content="This page is to show the some Data Visualizations conducted through the R."/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Ling Huang&#39;s Tech Blog: The secret recipe of Happiness"/>
+  <meta property="og:title" content="Ling Huang&#39;s Tech Blog: Data Analytics by the tool R &amp; RStudio"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?&#10;Being inspired by this question, we decide to explore it and hopefully we can dig out some insights."/>
+  <meta property="og:description" content="This page is to show the some Data Visualizations conducted through the R."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Ling Huang&#39;s Tech Blog"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Ling Huang&#39;s Tech Blog: The secret recipe of Happiness"/>
-  <meta property="twitter:description" content="Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?&#10;Being inspired by this question, we decide to explore it and hopefully we can dig out some insights."/>
+  <meta property="twitter:title" content="Ling Huang&#39;s Tech Blog: Data Analytics by the tool R &amp; RStudio"/>
+  <meta property="twitter:description" content="This page is to show the some Data Visualizations conducted through the R."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["The secret recipe of Happiness"]},{"type":"character","attributes":{},"value":["Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?\nBeing inspired by this question, we decide to explore it and hopefully we can dig out some insights.\n"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Data Analytics by the tool R & RStudio"]},{"type":"character","attributes":{},"value":["This page is to show the some Data Visualizations conducted through the R.\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["2021-03-20-south-east-asia-armed-conflicts"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2380,12 +2380,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body>
+<body class="layout-listing">
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"The secret recipe of Happiness","description":"Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others?\nBeing inspired by this question, we decide to explore it and hopefully we can dig out some insights.","authors":[]}
+{"title":"Data Analytics by the tool R & RStudio","description":"This page is to show the some Data Visualizations conducted through the R.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2398,8 +2398,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
-<a href="dvmakeover.html">DataViz Makeover</a>
-<a href="dvproject.html">DataViz Project</a>
+<a href="dvmakeover.html">DataViz by Tableau</a>
+<a href="dvproject.html">DataViz by R</a>
 <a href="about.html">About</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -2408,67 +2408,175 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
+<!--radix_placeholder_article_listing-->
+
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).load(function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash && window.location.hash.startsWith("#category:")) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace(/^#category:/, "");
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+
+      // update the list_caption
+      var list_caption = $('.posts-list-caption');
+      var caption = (page_category || '').toLowerCase() === "articles"
+        ? list_caption.attr('data-caption')
+        : ('Category: ' + page_category.replace(/_/g," "));
+      list_caption.text(caption);
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+      // reset list caption
+      var list_caption = $('.posts-list-caption');
+      list_caption.text(list_caption.attr('data-caption'));
+
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // click handling for tags
+  $('.dt-tag').click(function(ev) {
+    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
+    return false;
+  })
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
+
+<div class="posts-container posts-apply-limit l-page">
+<div class="posts-list">
+<h1 class="posts-list-caption" data-caption="Data Analytics by the tool R &amp; RStudio">Data Analytics by the tool R &amp; RStudio</h1>
+<a href="posts/2021-03-20-south-east-asia-armed-conflicts/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">March 20, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Ling Huang</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-03-20-south-east-asia-armed-conflicts/thumbnail.jpg"/>
+</div>
+<div class="description">
+<h2>South East Asia Armed Conflicts</h2>
+<div class="dt-tags"></div>
+<p>Armed conflicts consists in the use of armed force between two or more organized armed groups, governmental or non-governmental, by definition from [International Committee of the Red Cross](https://www.icrc.org/en/doc/assets/files/other/opinion-paper-armed-conflict.pdf). In South East Asia context, the Armed Conflicts have been ongoing for a long time. In 1950s, internal conflicts took place in Myanmar. In 1960s, insurgency happened in South Thailand. You can find the full list [here](https://en.wikipedia.org/wiki/List_of_ongoing_armed_conflicts). In this paper, we did visual analytics on the recent Armed Conflicts in South East Asia from 2015 to 2020 and explored some spatial-temporal patterns from it.</p>
+</div>
+</a>
+</div>
+<div class="posts-more">
+<a href="#">More articles &raquo;</a>
+</div>
+</div>
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>The secret recipe of Happiness</h1>
+<h1>Data Analytics by the tool R &amp; RStudio</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Every one of us, at some point of time in our life, was wondering what is happiness formula? Power? Wealth? Health? Others? Being inspired by this question, we decide to explore it and hopefully we can dig out some insights.</p></p>
+<p><p>This page is to show the some Data Visualizations conducted through the R.</p></p>
 </div>
 
 
 <div class="d-article">
-<h1 id="motivation">1. Motivation</h1>
-<p><span style="color:navy"><strong>Happiness</strong></span> leads to a wide range of benefits for our performance, health, relationships and more. So, rather than success being the key to <span style="color:navy"><strong>Happiness</strong></span> , research shows that <span style="color:navy"><strong>Happiness</strong></span> could in fact be the key to success. Indeed, <span style="color:navy"><strong>Happiness</strong></span> also brings substantial benefits for society. <br></p>
-<p>The <span style="color:blue"><em>World Happiness Report</em></span> is an annual survey by the Sustainable Development Solutions Network for the United Nations, revealing some countries are quite consistently outperforming in Happiness. The report measures 156 countries, ranking countries using the Gallup World Poll and six factors: levels of GDP, life expectancy, generosity, social support, freedom, and corruption income.<br></p>
-<p>In general, with the Government focus of generating wealth and economic growth, there is an assumption that leads ‘naturally’ to <span style="color:navy"><strong>Happiness</strong></span> and improved quality of life for all residents. But is this true? Specifically, by studying the relative achievements and correlations between countries and also over time, we can generate more insights of how <span style="color:navy"><strong>Happiness</strong></span> comes about. This information is important for individuals looking to emigrate, and for governments looking for good measure for actual ‘quality of life’ improvements.</p>
-<h1 id="objective">2. Objective</h1>
-<p>Our project aims to show through a series of visualizations based on data analysis, to the audience regarding the actual factors influencing Happiness and also some comparisons between countries.</p>
-<p>By reviewing data and analyzing the trends of the <span style="color:blue"><em>World Happiness Report</em></span> to uncover the key impacts and factors influencing the development of happiness, correlations between these factors for different countries <span style="color:green"><strong>from 2015 to 2020</strong></span>( last report was done in March 2020).</p>
-<h1 id="data-visualization-approaches">3. Data Visualization Approaches</h1>
-<p>We aim to present this view with a series of charts including:</p>
-<ol type="1">
-<li><p>Exploratory Data Analysis such as Bar Chart and Gantt Chart etc.</p></li>
-<li><p>Co-occurrence and Linear Regression Analysis chart</p></li>
-</ol>
-<ul>
-<li>For Various Constituent Variables</li>
-</ul>
-<ol start="3" type="1">
-<li><p>Cluster Analysis of Happiness between countries for selected period, variables.</p></li>
-<li><p>Visualization of World Happiness Map</p></li>
-</ol>
-<ul>
-<li>Interactive World Happiness Map with animations for 2015~2020</li>
-</ul>
-<h1 id="prototypes-of-the-data-visualization">4. Prototypes of the Data Visualization</h1>
-<h3 id="high-level-layout-of-the-interactive-chart">4.1 High-level layout of the Interactive Chart</h3>
-<p><img src="projectimages/overview.png" /></p>
-<h3 id="barchart-of-happiness-score-across-different-regions">4.2 Barchart of Happiness Score across different regions</h3>
-<p>A configurable bar charts allows the user to view the country-by-country trajectory of happiness score throughout the years.</p>
-<p><img src="projectimages/Picture4.png" /></p>
-<h3 id="stacked-barchart-broken-down-by-different-variables">4.3 Stacked Barchart broken down by different variables</h3>
-<p>The World Happiness Report has broken down the happiness score into 6 explained factors, hence, using a stacked bar chart, users can analyze the composition of the happiness score and the weight/importance of each factor for each country/region.</p>
-<p><img src="projectimages/Picture3.png" /></p>
-<h3 id="boxplot-chart-of-happiness-score-across-different-regionscountries">4.4 Boxplot Chart of Happiness Score across different regions/countries</h3>
-<p>A horizontal boxplot chart will provide a different and broken down view of the distribution of happiness score and the measured factors among regions or continents.</p>
-<p><img src="projectimages/Picture2.png" /></p>
-<h3 id="linear-regression-chart---happiness-against-different-variables">4.5 Linear Regression Chart - Happiness against different variables</h3>
-<p>Multiple scatter plot with linear regression, each shows the happiness score compared to each measured factors: economic production, social support, life expectancy, freedom, perception of corruption, and generosity. The trends shown in the scatter plots will be a one-dimensional linear regression, fit independently for each factor</p>
-<p><img src="projectimages/Picture1.png" /></p>
-<h3 id="clustering-analysis">4.6 Clustering analysis</h3>
-<p>Cluster analysis is a technique for grouping similar observations into a number of clusters based on multiple variables for each individual observed values. Our proposed cluster analysis is to see that for the Happiness index, and also its constituent Happiness Variables, how close are the countries from the different continents. Another view we can form, is we cluster the countries based on certain or group of variables, are they another clear trends, and whether these trends change over time.</p>
-<p><img src="projectimages/cluster.png" /></p>
-<h3 id="world-happiness-map">4.7 World Happiness Map</h3>
-<p>A choropleth world map to represent an aggregate summary of the happiness score and its’ independent variables geographically. The map can give an overview of how each variable varies across each region and continent.</p>
-<p><img src="projectimages/Picture5.png" /></p>
-<h1 id="data-source">5. Data Source</h1>
-<ul>
-<li>Kaggle <a href="https://www.kaggle.com/unsdsn/world-happiness">Happiness Dataset</a></li>
-<li>World Happiness Report <a href="https://worldhappiness.report/">Official Website</a></li>
-</ul>
-<h5 id="r-markdown">R Markdown</h5>
-<p>This is an R Markdown document.</p>
+<h2 id="welcome-to-data-viz-by-r">Welcome to Data Viz by R!</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

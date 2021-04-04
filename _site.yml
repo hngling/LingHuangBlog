@@ -1,16 +1,16 @@
 name: "LingHuangBlog"
-title: "Ling Huang's Tech Blog"
+title: "Ling Huang's Blog"
 description: |
-  Tech Blog
+  Blog site for Data Analytics.
 output_dir: "_site"
 theme: theme.css
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "DataViz Makeover"
+    - text: "DataViz by Tableau"
       href: dvmakeover.html
-    - text: "DataViz Project"
+    - text: "DataViz by R"
       href: dvproject.html
     - text: "About"
       href: about.html

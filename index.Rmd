@@ -1,7 +1,23 @@
 ---
-title: "Ling Huang's Blog"
+title: "Welcome to my Blog"
+description:
+    Initially, this blog site was created to fulfill the requirements from SMU program Master of IT in Business - Data Analytics track.
+  
+  Later on, I expanded it to document my data analytics works from my spare time.
+  
+  I hope you enjoy reading it!
+
+author:
+  - name: Ling Huang
+    url: https://www.linghuang.cc
+date: 02-02-2021
 site: distill::distill_website
-listing: 
-  posts:
-    - welcome
 ---
+
+# 1. Essentially, what is Data Science?
+![](images/WhatIsDS.png)
+
+
+# 2. The hierarchy needs within Data Science
+
+![](images/DS.png)

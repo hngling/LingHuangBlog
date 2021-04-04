@@ -1,7 +1,9 @@
 ---
-title: "Enjoy reading it!"
-description:
-  This page is to show the some Data Visualizations
+title: "Data Analytics by the tool Tableau!"
+description: |
+  This page is to show the some Data Visualizations done by Tableau. 
+  
+  Hope you enjoy reading it! Feel free to contact me if you have any comments or feedback!
 site: distill::distill_website
 listing: 
   posts:
@@ -16,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Welcome to Data Viz Makeover!
+## Welcome to Data Viz by Tableau!
 
 
 
