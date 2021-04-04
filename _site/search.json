@@ -14,7 +14,7 @@
       "description": "This page is to show the some Data Visualizations done by Tableau. \n\nHope you enjoy reading it! Feel free to contact me if you have any comments or feedback!\n",
       "author": [],
       "contents": "\r\nWelcome to Data Viz by Tableau!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-04T13:52:22+08:00"
+      "last_modified": "2021-04-04T20:52:46+08:00"
     },
     {
       "path": "dvproject.html",
@@ -22,7 +22,7 @@
       "description": "This page is to show the some Data Visualizations conducted through the R.\n",
       "author": [],
       "contents": "\r\nWelcome to Data Viz by R!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-04T14:52:46+08:00"
+      "last_modified": "2021-04-04T15:11:54+08:00"
     },
     {
       "path": "index.html",
@@ -36,7 +36,7 @@
       ],
       "date": "02-02-2021",
       "contents": "\r\n1. Essentially, what is Data Science?\r\n\r\n2. The hierarchy needs within Data Science\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-04T14:11:25+08:00"
+      "last_modified": "2021-04-04T19:57:16+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
