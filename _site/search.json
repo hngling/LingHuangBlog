@@ -6,7 +6,7 @@
       "description": "Welcome to my Blog.\n\nThis blog site is served a repository to publish my data analytics works derived from my SMU courses or my pet projects!\n\nI would like to share some interesting insights or skills that surfaced from my experiences. \n\nIf you have any questions, feel free to reach me at hngling@gmail.com.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-04T13:49:19+08:00"
+      "last_modified": "2021-04-10T14:14:38+08:00"
     },
     {
       "path": "dvmakeover.html",
@@ -14,7 +14,7 @@
       "description": "This page is to show the some Data Visualizations done by Tableau. \n\nHope you enjoy reading it! Feel free to contact me if you have any comments or feedback!\n",
       "author": [],
       "contents": "\r\nWelcome to Data Viz by Tableau!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-07T16:15:19+08:00"
+      "last_modified": "2021-04-10T14:15:30+08:00"
     },
     {
       "path": "dvproject.html",
@@ -22,7 +22,7 @@
       "description": "This page is to show the some Data Visualizations conducted through the R.\n",
       "author": [],
       "contents": "\r\nWelcome to Data Viz by R!\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-07T16:24:30+08:00"
+      "last_modified": "2021-04-10T14:16:04+08:00"
     },
     {
       "path": "index.html",
@@ -36,7 +36,7 @@
       ],
       "date": "02-02-2021",
       "contents": "\r\n1. Essentially, what is Data Science?\r\n\r\n2. The hierarchy needs within Data Science\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-05T19:04:28+08:00"
+      "last_modified": "2021-04-10T14:13:23+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
