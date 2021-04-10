@@ -50,15 +50,14 @@ Thus, visualizing time series data provides a preliminary tool for detecting if 
 + Exhibits seasonality;
 + Demonstrates structural breaks.
 
-In this project, we target on the US Market stocks. Stock prices and transaction volumes are sort of time series data.
+In this project, we target on the US Market stocks as the Stock prices and transaction volumes are sort of time series data. In addition, we would try to do Forecasting on the Stock prices.
 
-We will start off with visualizing the stock prices and transaction volumes. Then, we will focus on one or two stocks and use autocorrelation function and partial autocorrelation function to analyze.
+In this sub-module, I will start off with visualizing a few stocks' prices and transaction volumes as Exploratory Data Analysis.
 
-ACF: Autocorrelation function
+Then, I will pick one or two stocks and use Autocorrelation function (*ACF*) and Partial Autocorrelation function (*PACF*) to stationize it. Why do we need to stationize the data? Well, in general, the stock prices and volumes are not stationary data, Thus in order to do Forecasting afterwards, making it stationary is a must-have processing step.
 
-PACF: Partial Autocorrelation function
 
-# 3. Exploring and Visualizing the data via available methods in R
+# 3. Exploring and Visualizing the stock data
 
 
 ### Check the required R packages and load them
@@ -75,8 +74,9 @@ for(p in packages){
 
 ### Load the data
 
-We selected 8 stocks from 4 different sectors.
-+   Industrials sector: AAL (American Airliners), SAVE (Spirit Airlines)
+We selected 8 stocks from 4 different sectors.  
+
++   Industrials sector: AAL (American Airlines), SAVE (Spirit Airlines)
 +   Financials sector: BAC (Bank of America), JPM (JP Morgan)
 +   Healthcare sector: JNJ (Johnson & Johnson), PFE (Pfizer)
 +   Information Technology sector: MSFT (Microsoft), AAPL (Apple Inc.)
@@ -102,7 +102,11 @@ for(s in stocks){
 ```
 
 <!-- rm(list=ls()) -->
-### Line chart of the Stock prices 
+
+### Scatterplot of 8 stocks' prices
+
+Let's display them by 2 columns. 
+
 ```{r}
 data %>%
   group_by(symbol) %>%
@@ -118,7 +122,12 @@ data %>%
                    .plotly_slider = FALSE) 
 
 ```
-### Line chart of the Stock transaction volumes
+
+
+### Scatterplot of 8 stocks' transaction volumes
+
+Let's display them by 2 columns. 
+
 ```{r}
 data %>%
   group_by(symbol) %>%
@@ -131,32 +140,11 @@ data %>%
                    .title = "Transaction Volume",
                    .facet_ncol = 2, .interactive = T, .y_intercept = 0)
 ```
-### ACF and PACF
-```{r}
-# Financials sector: Bank of America
-bac <- data %>%
-           filter(symbol == "BAC")
-pacf(bac$volume)
-```
 
 
-### Daily Trend of Price
-```{r}
-# Financials sector: JP Morgan
-data %>%
-  filter(symbol == "JPM") %>%
-    plot_time_series(date, adjusted, .color_var = year(date), .interactive = T)
-```
-### Daily Trend of Price
-```{r}
-# Information Technology sector: Apple Inc.
-data %>%
-  filter(symbol == "AAPL") %>%
-    plot_time_series(date, adjusted, .color_var = year(date), .interactive = T)
-```
+### Scatterplot of the stock price - Weekly Trend  
 
-
-### Weekly Trend
+We can aggregate the data by weekly basis. Here, I choose American Airlines as an example.
 
 ```{r}
 data %>%
@@ -168,7 +156,13 @@ data %>%
   plot_time_series(date, meanadjusted, .interactive = T, .y_intercept = 0)
 ```
 
-### Monthly Trend
+
+
+### Scatterplot of the stock price - Monthly Trend  
+
+We can aggregate the data by monthly basis. Here, I choose Spirit Airlines as an example.
+
+
 ```{r}
 data %>%
   filter(symbol == "SAVE") %>%
@@ -180,16 +174,21 @@ data %>%
 ```
 
 
-```{r}
 
+### Interactive scatterplot of the stock price   
+
+Here, I choose Johnson & Johnson as an example.
+
+
+```{r}
 JNJ <- data %>%
   filter(symbol == "JNJ") %>%
-  select("date", "volume")
+  select("date", "adjusted")
   
 ts_plot(JNJ,
         title = "Johnson and Johnson",
         Xtitle = "Date",
-        Ytitle = "Volume",
+        Ytitle = "Price",
         color = "blue",
         slider = TRUE,
         Xgrid = TRUE,
@@ -197,12 +196,115 @@ ts_plot(JNJ,
 ```
 
 
-# 4. References
+
+### Interactive scatterplot of the stock volume   
+
+Here, I illustrate with Apple Inc. stock.
+
+
+
+```{r}
+apple <- data %>%
+  filter(symbol == "AAPL") %>%
+  select("date", "volume")
+  
+ts_plot(apple,
+        title = "Apple Inc.",
+        Xtitle = "Date",
+        Ytitle = "Volume",
+        color = "purple",
+        slider = TRUE,
+        Xgrid = TRUE,
+        Ygrid = TRUE)
+```
+
+# 4. Stationize the data
+
+Let's pick one stock *"JP Morgan"* from __Financials sector__ and illustrate how we can make the data stationary.
+
+
+### Visualize the JP Morgan price  
+
+```{r}
+jpmorgan <- data %>%
+  filter(symbol == "JPM")
+
+jpmorgan %>%
+plot_time_series(date, adjusted, .color_var = year(date), .interactive = T)
+```
+
+### Assesse its ACF and PACF  
+
+In R this is done with the appropriately named acf and pacf functions.
+
++ Plot the ACF(Autocorrelation Function)
+
+The ACF shows the correlation of a time series with lags of itself. That is, how much the time series is correlated with itself at one lag, at two lags, at three lags and so on.
+
+```{r}
+acf(jpmorgan$adjusted)
+```
+
++ Plot the PACF(Partial Autocorrelation Function)
+
+The PACF is a little more complicated. The autocorrelation at lag one can have lingering effects on the autocorrelation at lag two and onward. The partial autocorrelation is the amount of correlation between a time series and lags of itself that is not explained by a previous lag. So, the partial autocorrelation at lag two is the correlation between the time series and its second lag that is not explained by the first lag.
+
+```{r}
+pacf(jpmorgan$adjusted)
+```
+
+### Use the Differencing technique  
+
+Differencing a time series method, to subtract each data point in the series from its successor. It is commonly used to make a time series stationary. Besides, if the time series appears to be seasonal, a better approach is to difference with respective season's data points to remove seasonal effect.
+
+
+But, how should we know how many differencing is needed? the __nsdiffs__ and __ndiffs__ from *forecast* package can help find out how many seasonal differencing and regular differencing respectively is needed to make the series stationary. (**Note: For most time series patterns, 1 or 2 differencing is necessary to make it a stationary series.**)
+
+##### Seasonal Differencing
+```{r}
+# nsdiffs(jpmprice$adjusted)  # number for seasonal differencing needed
+#> Error in nsdiffs(jpmprice$adjusted) : Non seasonal data
+```
+
+##### Regular Differencing
+```{r}
+ndiffs(jpmorgan$adjusted)  # number of differences needed
+```
+
+##### Make it stationary
+```{r}
+stationaryTS <- diff(jpmorgan$adjusted, differences= 1)
+plot(stationaryTS, type="l", main="Differenced and Stationary")  # appears to be stationary
+```
+
+
+# 5. Observations & Conclusions
+
++ In the same sector, by and large the stocks behave similarly in the long run. 
+
+In other words, the stocks in the same sector show the same trends and fluctuations. For instance, if we compare the Apple Inc.'s price scatterplot with Microsoft Corporation one in the past 5 years, their performance are almost the same. If we check the American Airlines and Spirit Airlines's prices scatterplots, they look almost the same too. Probably the stocks in the same sector would be affected by the sector's outlook and investor's sentiments on the sector. If the investors favor one sector, most stocks in this sector would benefit. 
+
++ Different sector's performances are significantly different in the same period.
+
+The airlines' stock prices dropped dramatically due to the Covid-19 in year 2020 whereas the stock prices of Healthcare sector and Information Technology sector skyrocketed because Covid-19 boosts the usage of healthcare products and IT products.
+
+
++ In early 2020, all the stocks' transaction volumes peaked in a historic record.
+
+This could be explained by the Covid-19 factor too. Investors rushed to sell off the stocks negatively affected by Covid-19 and buy in the stocks positively affected by Covid-19 substantially.
+
++ The differencing technique can be used as pre-processing step to make the time series data stationary for further modeling.
+
+
+# 6. References
 
 + Wikipedia about Time Series: https://en.wikipedia.org/wiki/Time_series;
 + Github about the Timetk package: https://business-science.github.io/timetk/articles/TK04_Plotting_Time_Series.html;
 + Business Science: https://www.business-science.io/code-tools/2020/08/19/five-minute-time-series-rolling-calculations.html;
 + Tidyquant: https://cran.csiro.au/web/packages/tidyquant/vignettes/TQ02-quant-integrations-in-tidyquant.html;
 + Tidyquant package: https://cran.r-project.org/web/packages/tidyquant/index.html;
-+ Stocks sectors breakdown: https://www.investopedia.com/terms/s/sector-breakdown.asp;
++ Time Series Analysis with R from R-Statistics: http://r-statistics.co/Time-Series-Analysis-With-R.html
++ Time Series with R from Dominodatalab: https://blog.dominodatalab.com/time-series-with-r/
++ Stocks sectors breakdown:
+https://www.investopedia.com/terms/s/sector-breakdown.asp;
 + Stocks market: https://www.fool.com/investing/stock-market/market-sectors;
