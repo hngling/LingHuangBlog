@@ -1,5 +1,5 @@
 ---
-title: "Time Series Analysis of Stocks"
+title: "Exploratory Analysis of Time Series Data - US Stocks"
 description: |
     This post is served as a sub-module of Visual Analytics project. I aim to leverage on the time series analysis techniques and interactivity approaches in R to present the possible visualizations of US Market stocks.
 author:
@@ -285,22 +285,45 @@ plot(stationaryTS, type="l", main="Differenced and Stationary")  # appears to be
 
 The airlines' stock prices dropped dramatically due to the Covid-19 in year 2020 whereas the stock prices of Healthcare sector and Information Technology sector skyrocketed because Covid-19 boosts the usage of healthcare products and IT products.
 
+> From the 1st observation, I suggest that we need to show a few different stock sectors for the users to select when we build the final Shiny App.
+
 
 + In the same sector, by and large the stocks behave similarly in the long run. 
 
 In other words, the stocks in the same sector show the same trends and fluctuations. For instance, if we compare the Apple Inc.'s price scatterplot with Microsoft Corporation one in the past 5 years, their performance are almost the same. If we check the American Airlines and Spirit Airlines's prices scatterplots, they look almost the same too. Probably the stocks in the same sector would be affected by the sector's outlook and investor's sentiments on the sector. If the investors favor one sector, most stocks in this sector would benefit. 
 
+> From the 2nd observation, I suggest that we may also need to allow users to select several stocks from the same sector in the final Shiny App.
 
 + In early 2020, all the stocks' transaction volumes peaked in a historic record.
 
 This could be explained by the Covid-19 factor too. Investors rushed to sell off the stocks negatively affected by Covid-19 and buy in the stocks positively affected by Covid-19 substantially.
 
+> From the 3rd observation, we should display the stock's transaction volume data as well as price data in the final Shiny App as both can tell some meaningful insights.
 
 + The differencing technique can be used as pre-processing step to make the time series data stationary for further
 modeling.
 
+> From the 4th observation, we can present the stationized plots (ACF and PACF charts) along with a little explanations.
 
-# 6. References
++ Other thoughts
+
+> On top of the ideas above, as the key components of EDA, in my view, we can make the Start-date and End-date as calender view selections so that the users will be able to choose any time period as they wish. 
+
+# 6. Storyboard for the design of the sub-module.
+
+After examining and exploring the stock data, I propose the design of EDA layout as below.
+
+1. We can have two tabs: one is to compare multiple stocks and the other one is to deep dive into one stock analysis.
+
+2. In the comparison page of multiple stocks, both the price and transaction volume will be displayed.
+
+3. In the one stock analysis page, the price, transaction volume, ACF & PACF and final stationary charts will be plotted.
+
+The storyboard for the design is attached as below.
+![](images/sketchdesign.jpg)
+
+
+# 7. References
 
 + Wikipedia about Time Series: https://en.wikipedia.org/wiki/Time_series;
 + Github about the Timetk package: https://business-science.github.io/timetk/articles/TK04_Plotting_Time_Series.html;
